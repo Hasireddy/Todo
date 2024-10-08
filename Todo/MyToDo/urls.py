@@ -1,14 +1,13 @@
 from django.contrib import admin
 from django.urls import path
 
-from . views import index,remove
+from . views import add_item,remove_item
 
 
 app_name = "todo"
 
 urlpatterns = [
-    path("",index,name="todo"),
-    path("del/<str:item_id>",remove,name="delete"),
-    path("admin/",admin.site.urls)
+    path("",add_item,name="add"),
+    path("delete/<int:item_id>/",remove_item,name="delete"),
        
 ]
