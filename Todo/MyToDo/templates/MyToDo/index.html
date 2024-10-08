@@ -26,6 +26,7 @@
             <h3>Detils: {{i.details}}</h3>
           </div>
           <form method="post" action = "{% url 'todo:delete' i.id %}">
+            {% comment %} action option dynamically generates url for the delete action based on item's id {% endcomment %}
             {% csrf_token %}
             <button type="submit">Delete</button>
           </form>
